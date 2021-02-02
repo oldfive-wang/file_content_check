@@ -1,5 +1,5 @@
 # @Copyright(C), OldFive, 2020.
-# @Date : 2021/1/22 0022 10:14:41
+# @Date : 2021/2/2 11:47:40
 # @Author : OldFive
 # @Version : 0.1
 # @Description : 
@@ -17,33 +17,18 @@
 #                   ░                      ░
 #
 """
-各类文件二进制头特征
+解析各种文件
 """
 
-
-def get_file_flag():
-    return
+from docx import Document
 
 
-def __video_file_flag():
-    pass
+def word_file_parsing(file_path: str):
+    """word文件解析"""
+    doc = Document(file_path)
+    for para in doc.paragraphs:
+        print(para.text)
 
 
-def __document_file_flag():
-    pass
-
-
-def __image_file_flag():
-    pass
-
-
-def __audio_file_flag():
-    pass
-
-
-def __archive_file_flag():
-    pass
-
-
-def __font_file_flag():
-    pass
+def excel_file_parsing(file_path: str):
+    """excel文件解析"""
